@@ -9,15 +9,17 @@
 	<script src="js/angular.min.js" type="text/javascript"></script>
 	<script src="js/myApp.js" type="text/javascript"></script>
 </head>
-<body ng-controller="MyCtrl">
+<body>
+	<div ng-controller="MultiplicationCtrl" initial-number-limit="10">
+		<input type="number" ng-model="numberLimit" placeholder="Enter a number" />
+		<table>
 
-	<table>
-        <tr ng-repeat="numberA in numbers">
-            <td ng-repeat="numberB in numbers">
-                {{ numberA * numberB }}
-            </td>
-        </tr>
-    </table>
-
+	        <tr ng-repeat="numberA in numbers()">
+	            <td ng-repeat="numberB in numbers()">
+	                {{ compute(numberA, numberB) }}
+	            </td>
+	        </tr>
+	    </table>
+	</div>
 </body>
 </html>
