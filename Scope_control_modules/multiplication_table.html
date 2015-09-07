@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="js/angular.min.js" type="text/javascript"></script>
+	<script src="js/myApp.js" type="text/javascript"></script>
+</head>
+<body ng-controller="MyCtrl">
+
+	<table>
+        <tr ng-repeat="numberA in numbers">
+            <td ng-repeat="numberB in numbers">
+                {{ numberA * numberB }}
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

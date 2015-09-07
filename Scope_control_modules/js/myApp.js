@@ -1,5 +1,5 @@
 angular.module('myApp', [])
-    .constant('VERSION', 1.1)
-    .controller('MyCtrl', function(VERSION, $scope) {
-        $scope.version = VERSION;
+    .controller('MyCtrl', function($scope) {
+        $scope.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
     });
