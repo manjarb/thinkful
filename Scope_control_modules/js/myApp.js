@@ -1,4 +1,4 @@
-angular.module('myApp', [])
+angular.module('myApp', [ngMessages])
     .controller('MultiplicationCtrl', function($scope, $attrs) {
         $scope.numberLimit = $attrs.initialNumberLimit || 10;
 
@@ -13,4 +13,7 @@ angular.module('myApp', [])
         $scope.compute = function(a,b) {
 	        return a * b;
 	    };
+    })
+    .controller('formTestContrl', function($scope, $attrs) {
+        
     });

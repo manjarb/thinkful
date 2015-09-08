@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="js/angular.min.js" type="text/javascript"></script>
+	<script src="js/angular-messages.min.js" type="text/javascript"></script>
+	<script src="js/myApp.js" type="text/javascript"></script>
+</head>
+<body>
+	<form name="myForm">
+	    <input type="text" name="texty" ng-model="data.texty" required ng-minlength="2" ng-pattern="/^a/">
+	</form>
+
+	<!-- <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+	    A name is required!
+	</span>
+	<span class="error" ng-if="myForm.$submitted && myForm.texty.$error.pattern">
+	    The name must start with the "a" character!
+	</span> -->
+
+	<div ng-if="myForm.$submitted" ng-messages="myForm.texty.$error">
+	    <span class="error" ng-message="required">Field is required!</span>
+	    <span class="error" ng-message="minlength">Field is too short!!</span>
+	</div>
+</body>
+</html>
