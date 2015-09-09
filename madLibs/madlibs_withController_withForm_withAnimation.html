@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="madLibs">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="js/angular.min.js" type="text/javascript"></script>
+	<script src="js/angular-messages.min.js" type="text/javascript"></script>
+	<script src="js/madlibs_form.js" type="text/javascript"></script>
+
+</head>
+<body ng-controller="MyCtrl">
+
+	<header>
+		<div class="logo-box">
+			<img src="img/mad-lib-happy-face.png" alt="">
+		</div>
+		<div class="header-title-box">
+			<img src="img/ng-mad-libs-logo.png" alt="">
+			<h1>Automate This!</h1>
+		</div>
+	</header>
+
+	<section class="wordlist-section" ng-hide="myForm.$submitted && myForm.$valid" ng-show="showDetails">
+		<form name="myForm">
+
+			<h2>Provide the following words</h2>
+
+			<div class="input-box">
+				<input type="text" name="female_name" ng-model="female_name" value="" placeholder="female_name" required ng-minlength="3">
+				<input type="text" name="job_title" ng-model="job_title" name="" value="" placeholder="job_title" required ng-minlength="3">
+				<input type="text" name="tedious_task" ng-model="tedious_task" name="" value="" placeholder="tedious_task" required ng-minlength="3">
+			</div>
+
+			<div class="input-box">
+				<input type="text" ng-model="dirty_task" name="" value="" placeholder="dirty_task" required>
+				<input type="text" ng-model="female_name2" name="" value="" placeholder="female_name2" required>
+				<input type="text" ng-model="celebrity" name="" value="" placeholder="celebrity" required>
+			</div>
+
+			<div class="input-box">
+				<input type="text" ng-model="useless_skill" name="" value="" placeholder="useless_skill" required>
+				<input type="text" ng-model="adjective" name="" value="" placeholder="adjective" required>
+				<input type="text" ng-model="obnoxiuous_celbertity" name="" value="" placeholder="obnoxiuous_celbertity" required>
+			</div>
+			<div class="input-box">
+				<input type="text" ng-model="dirty_task" name="" value="" placeholder="dirty_task" required>
+				<input type="number" ng-model="huge_number" name="" value="" placeholder="huge number" required>
+			</div>
+			<br>
+			<input type="submit" value="Generate My Mad Lib" class="float-right">
+			<br>
+
+			
+		</form>
+		<div ng-if="myForm.$submitted" ng-messages="myForm.$error">
+		    <span class="error" ng-message="required">Field is required!</span>
+		    <span class="error" ng-message="minlength">Field is too short!! 3 letters at least</span>
+		</div>
+
+		<!-- <span class="error" ng-if="myForm.$submitted && myForm.texty.$error.required">
+		    A name is required!
+		</span> -->
+	</section>
+
+	<section ng-show="myForm.$submitted && myForm.$valid" class="sentence-section">
+
+		<p>
+			<span class="inputResult">{{ female_name }}</span> 
+				was a
+			<span class="inputResult">{{ job_title }}</span> who loved technology. Although she loved parts of her job, she absolutely hated <span class="inputResult">{{tedious_task}}</span> and <span class="inputResult">{{dirty_task}}.</span> So, <span class="inputResult">{{female_name2}}</span> met with her life mentor <span class="inputResult">{{celebrity}}</span> who told her to learn how to <span class="inputResult">{{useles_skill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="inputResult">{{useless_skill}}</span> so she studied programming instead.
+			<br>
+			What a great decision! With her new skills, <span class="inputResult">{{female_name}}</span> built a(n) <span class="inputResult">{{adjective}}</span> robot named <span class="inputResult">{{obnoxiuous_celbertity}}</span> that not only loved <span class="inputResult">{{dirty_task}}</span> but did it <span class="inputResult">{{huge_number}}</span>
+		</p>
+		<br>
+
+		<button ng-model="reset-form" ng-click="reset();showDetails = !showDetails">start over</button>
+	</section>
+
+</body>
+</html>
