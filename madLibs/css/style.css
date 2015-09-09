@@ -59,3 +59,26 @@ p {
 .float-right {
 	float: right;
 }
+
+.wordlist-section {
+	transition: 0.5s linear all;
+	height: 450px;
+}
+
+.wordlist-section.ng-hide {
+	position: relative;
+	height: 0;
+}
+
+.wordlist-section input {
+	transition: 0.5s linear all;
+}
+
+.wordlist-section.ng-hide input {
+	display: none;
+	
+}
+
+.wordlist-section.ng-hide-add.ng-hide-add-active {
+	background-color: green;
+}

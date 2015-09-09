@@ -1,4 +1,4 @@
-angular.module('madLibs', ['ngMessages'])
+angular.module('madLibs', ['ngMessages','ngAnimate'])
     .controller('MyCtrl', function($scope) {
         // $scope.female_name = 'female_name';
         // $scope.job_title='job_title';
