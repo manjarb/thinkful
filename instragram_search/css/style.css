@@ -1,0 +1,32 @@
+header {
+	text-align: center;
+	padding-top: 40px;
+}
+
+.seacrh-section {
+	text-align: center;
+}
+
+img {
+	max-width: 100%;
+}
+
+.row > div {
+	margin-bottom: 30px;
+}
+
+.resultAnimate.ng-enter, .friend.ng-leave {
+    transition: all linear 2s;
+}
+
+.resultAnimate.ng-enter,
+.resultAnimate.ng-leave.ng-leave-active {
+    opacity: 0;
+
+}
+
+.resultAnimate.ng-leave,
+.resultAnimate.ng-enter.ng-enter-active {
+    opacity: 1;
+
+}
