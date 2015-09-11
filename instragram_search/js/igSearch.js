@@ -8,8 +8,6 @@ angular.module('igSearch', ['ngMessages','ngAnimate'])
         $scope.submitTag = function(){
           //$scope.photoResult = 0;
 
-          alert('submit tag');
-
           $scope.searchDisplay = $scope.searchTag;
 
           var url = "https://api.instagram.com/v1/tags/"+ $scope.searchTag +"/media/recent";

@@ -45,7 +45,7 @@
 			<div class="row">
 				<div class="col-md-4 resultAnimate" ng-repeat="searchResult in searchResults track by $index">
 					<a href="{{ searchResult.link }}" target="_blank">
-						<img src="{{ searchResult.images.standard_resolution.url }}" alt="">
+						<img ng-src="{{ searchResult.images.standard_resolution.url }}" alt="">
 					</a>
 				</div>
 
