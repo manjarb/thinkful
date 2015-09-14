@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" ng-app="waitStaffWithRouting">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Routing WaitStaff Calculator</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>WaitStaff Calculator</h1>
+		</header>
+		<br>
+		<div class="linkBox">
+			<a href="#/">Home</a>
+			|
+		    <a href="#/newMeal">New Meal</a>
+		    |
+		    <a href="#/myEarnings">My Earnings</a>
+		</div>
+		
+		<br>
+		<br>
+
+		<div ng-view></div>
+	</div>
+
+    
+    
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="js/angular-messages.min.js"></script>
+    <script type="text/javascript" src="js/waitstaff_calculator_form.js"></script>
+</body>
+</html>
