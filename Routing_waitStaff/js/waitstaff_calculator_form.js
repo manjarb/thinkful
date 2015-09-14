@@ -1,4 +1,4 @@
-angular.module('waitStaffWithRouting', ['ngRoute'])
+angular.module('waitStaffWithRouting', ['ngRoute', 'ngAnimate'])
     .value('globalVar', {
       mealCount: 0,
       totalTip: 0,
@@ -20,18 +20,6 @@ angular.module('waitStaffWithRouting', ['ngRoute'])
         }).when('/newMeal', {
             templateUrl : 'new_meal.html',
             controller : 'NewMealCtrl'
-            // resolve : {
-            //     city: function(owmCities, $route, $location) {
-            //         var city = $route.current.params.city;
-            //         city = city.replace('_', ' ');
-            //         if(owmCities.indexOf(city) == -1 ) {
-            //             $location.path('/error');
-            //             return;
-            //         }
-            //         //return owmFindCity(city);
-            //         return city;
-            //     }
-            // }
         }).when('/myEarnings', {
             templateUrl : 'my_earning.html',
             controller : 'MyEarningCtrl'
@@ -39,6 +27,21 @@ angular.module('waitStaffWithRouting', ['ngRoute'])
             template : '<p>Error - Page Not Found</p>'
         }).otherwise('/');
     }])
+    .run(function($rootScope, $location, $timeout) {
+        $rootScope.$on('$routeChangeError', function() {
+            $location.path("/error");
+        });
+        $rootScope.$on('$routeChangeStart', function() {
+            $rootScope.isLoading = true;
+            console.log('routeChangeStart');
+        });
+        $rootScope.$on('$routeChangeSuccess', function() {
+          $timeout(function() {
+            $rootScope.isLoading = false;
+          }, 1000);
+          console.log('routeChangeSuccess');
+        });
+    })
     .controller('HomeCtrl', function($scope) {
         //empty for now
     })
