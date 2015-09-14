@@ -5,7 +5,7 @@ angular.module('waitStaff', [])
         $scope.totalTip = 0;
 
         $scope.submitForm = function(){
-          alert('submit test');
+          alert('submit test')
 
           $scope.subTotal = $scope.baseMeal + (($scope.taxRate / 100) * $scope.baseMeal);
           $scope.tip = (($scope.tipPercent / 100) * $scope.subTotal);
@@ -30,7 +30,6 @@ angular.module('waitStaff', [])
           $scope.tip = "";
           $scope.totalPrice = "";
           $scope.totalTip = 0;
-          $scope.avgTips = 0;
 
           $scope.waitStaffForm.$setPristine();
           $scope.waitStaffForm.$setUntouched();
