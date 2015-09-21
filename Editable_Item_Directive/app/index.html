@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="editableDirective">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Editable directive</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-init="editableCheck = false">
+	<br>
+	<br>
+	<section class="container">
+		<div class="rom">
+			<div class="col-md-9">
+				<div make-editable>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio impedit voluptatibus sequi ullam, inventore, aperiam rerum nam at ab, reiciendis veniam nesciunt rem atque qui exercitationem in! Ad nihil, labore?</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<button class="btn btn-default" ng-click="editableCheck = true" ng-show="!editableCheck">Edit</button>
+				<button class="btn btn-danger" ng-click="editableCheck = false" ng-show="editableCheck">Save</button>
+			</div>
+		</div>
+	</section>
+	
+	<script src="js/editable_directive.js"></script>
+</body>
+</html>
