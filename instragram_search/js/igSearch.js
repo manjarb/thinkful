@@ -1,3 +1,13 @@
+var x = [1,5,7,13];
+for(i=0; i < x.length; i++)
+{
+  console.log(x[i] = x[3-i] + 2);
+}
+
+y = [2, 4, 1];
+console.log(y[0] = y[0] + y[1]);
+
+
 angular.module('igSearch', ['ngMessages','ngAnimate'])
     .controller('MyCtrl', function($scope,$http) {
 
